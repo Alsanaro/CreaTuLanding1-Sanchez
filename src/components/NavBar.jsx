@@ -1,29 +1,23 @@
+import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">ECOMMERCE</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">INICIO</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">PRODUCTOS</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">CONTACTO</a>
-            </li>
-          </ul>
+    <header className="bg-light shadow-sm mb-4">
+      <div className="container d-flex justify-content-between align-items-center py-3">
+        <NavLink to="/" className="text-decoration-none h4 m-0 text-dark">
+          ECOMMERCE
+        </NavLink>
+
+        <nav className="d-flex gap-4 align-items-center">
+          <NavLink className="text-dark text-decoration-none" to="/">Inicio</NavLink>
+          <NavLink className="text-dark text-decoration-none" to="/categoria/sneakers">Sneakers</NavLink>
+          <NavLink className="text-dark text-decoration-none" to="/categoria/jerseys">Jerseys</NavLink>
+          <NavLink className="text-dark text-decoration-none" to="/categoria/jackets">Jackets</NavLink>
           <CartWidget />
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
 
